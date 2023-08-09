@@ -1,1 +1,1 @@
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=MoSala7&repo=mohamedokaily.github.io&show_icons=true&include_all_commits=false&count_private=true)](https://mohamedokaily.com/)
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=mohamedokaily&repo=mohamedokaily.github.io&show_icons=true&include_all_commits=false&count_private=true)](https://mohamedokaily.com/)
