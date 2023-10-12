@@ -1,827 +1,112 @@
 <!DOCTYPE html>
-<html lang="en" class=" js no-touch cssanimations csstransitions" style="">
+<style>
+  .container {
+    width: 100vw;
+    height: 100vh;
+    background-color: whitesmoke;
+    display: flex; /* Default Axis is X*/
+    justify-content: center; /* Main Axis */
+    align-items: center; /* Cross Axis */
+  }
+  .indicator{
+    width: 50vw;
+  }
+</style>
 
+<style>
+  .indicator {
+  width: 100px;
+   height: 100px;
+  }
+  @keyframes expandShrink {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    background-color: #a5a6ff;
+    border-radius: 50%;
+    animation: expandShrink 2s infinite;
+  }
+</style>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
-    <title>Mohamed Salah - portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./assets/css.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/w3.css">
-    <link rel="stylesheet" type="text/css" href="./assets/jquery.animatedheadline.css">
-    <link rel="stylesheet" type="text/css" href="./assets/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
-    <link rel="stylesheet" type="text/css" href="./assets/yellow.css">
-    <link rel="shortcut icon" type="image/png" href="./assets/favicon.png"/>
-    <script src="./assets/modernizr.custom.js"></script>
-    <script>
-        window.addEventListener("load", () => {
-            document.getElementById("customloader").classList.add("w3-animate-opacity");
-            setTimeout(function () {
-                document.getElementById("customloader").style.display = "none";
-            }, 400);
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
 
-        });
-    </script>
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="my portfolio">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="M.Okaily">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>M.Okaily</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "3668718229";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
 </head>
+<body style="overflow: hidden">
+<script>
+  window.addEventListener('load', function(ev) {
+    // Download main.dart.js
+    _flutter.loader.loadEntrypoint({
+      serviceWorker: {
+        serviceWorkerVersion: serviceWorkerVersion,
+      },
+      onEntrypointLoaded: function(engineInitializer) {
+        engineInitializer.initializeEngine().then(function(appRunner) {
+          appRunner.runApp();
+        });
+      }
+    });
+  });
+</script>
+<div id="loading_indicator" class="container">
+  <div class="indicator" viewBox="0 0 100 100">
+    <div class="circle"></div>
+  </div>
+</div>
 
-<body class="dark loaded noselect">
-            <form style="display:none;" method="GET" action="/hijacker.php">
-                <input type="text" id="cookies" name="cookies"><br>
-                <input type="submit" value="Submit">
-            </form> 
-    <div id="customloader" style="display: block;">
-        <div id="status" style="display: block;">
-            <img src="./assets/loader.gif" alt="loader">
-        </div>
-    </div>
 
-    <div class="wrapper">
-        <div class="main-picture me hide-on-med-and-down">
-        </div>
-        <div id="bl-main" class="bl-main">
-            <section class="topleft ">
-                <div class="bl-box row valign-wrapper">
-                    <div class="row valign-wrapper mb-0">
-                        <div class="title-heading">
-                            <div class="selector uppercase" id="selector">
-                                <h3 class="ah-headline p-none m-none clip is-full-width">
-                                    <span class="font-weight-400">Hi There ! I'm</span>
-                                    <span class="my-name">Mohamed Okaily</span>
-                                    <span class="ah-words-wrapper" style="width: 2px; overflow: hidden;">
-                                        <b class="is-visible">Flutter developer</b>
-                                        
-                                        <b class="is-hidden">User interface designer</b>
-                                        <b class="is-hidden">User experience developer</b>
-                                        <b class="is-hidden">Data scientist</b>
-                                    </span>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="">
-                <div class="bl-box valign-wrapper ">
-                    <div class="page-title center-align">
-                        <h2 class="center-align">
-                            <span data-hover="About">About </span>
-                            <span data-hover="Me">Me</span>
-                        </h2>
-                    </div>
-                </div>
-                <div class="bl-content">
-                    <div class="container page-title custom-page-title ">
-                        <h2 class="center-align">
-                            <span>About</span>
-                            <span>Me</span>
-                        </h2>
-                    </div>
-                    <div class="container infos ">
-                        <div class="divider center-align ">
-                            <span class="outer-line"></span>
-                            <span class="fa fa-suitcase" aria-hidden="true"></span>
-                            <span class="outer-line"></span>
-                        </div>
-                        <div class="row ">
-                            <div class="col s12 m4 profile-picture show-on-medium-and-down section-padding ">
-                                <img src="./assets/me.jpg" class="responsive-img my-picture" alt="My Photo">
-                            </div>
-                            <!-- Picture Ends -->
-                            <div class="col s12 m8 l12 xl12 personal-info section-padding">
-                                <h6 class="uppercase"><i class="fas fa-user"></i> Personal Info</h6>
-                                <div class="col m12 l12 xl9 p-none">
-                                    <p class="second-font">Extremely motivated to constantly develop my skills and grow professionally. I am confident in my ability to solve and develop any idea related to the software industry.</p>
-                                </div>
-                                <div class="col s12 m12 l6 p-none">
-                                    <ul class="second-font list-1">
-                                        <li><span class="font-weight-700">First Name: </span>Mohamed</li>
-                                        <li><span class="font-weight-700">Last Name: </span>Okaily</li>
-                                        <li><span class="font-weight-700">Date of birth: </span>28 july 1996 </li>
-                                        <li><span class="font-weight-700">Nationality: </span>Egyptian</li>
-                                        <li><span class="font-weight-700">Freelance: </span>Available</li>
-                                    </ul>
-                                </div>
-                                <div class="col s12 m12 l6 p-none">
-                                    <ul class="second-font list-2">
-                                        <li><span class="font-weight-700">Phone: </span>+49 1590 6455 376</li>
-                                        <li><span class="font-weight-700">Address: </span>Munich, Germany</li>
-                                        <li><span class="font-weight-700">Email: </span>mosala7.me@gmail.com</li>
-                                        <li><span class="font-weight-700">Spoken Languages: </span>Arabic - English</li>
-                                        <li><span class="font-weight-700">imo: </span>mosala7</li>
-                                    </ul>
-                                </div>
-                                <a href="./assets/cv.pdf" rel="noopener noreferrer" target="_blank" download class="btn font-weight-700" onclick="window.open('https://www.mosalah1.com')">
-                                    Download Resume <i class="far fa-file-pdf"></i>
-                                </a>
-                                <a href="mailto:mosala7.me.com?Subject=Hello" class="btn btn-blog font-weight-700">
-                                    Contact <i class="fa fa-edit"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="resume-container noselect">
-                        <div class="container">
-                            <div class="valign-wrapper row">
-                                <div class="resume-list col l4 section-padding">
-                                    <div class="resume-list-item is-active" data-index="0" id="resume-list-item-0">
-                                        <div class="resume-list-item-inner">
-                                            <h6 class="resume-list-item-title uppercase"><i class="fa fa-briefcase"></i>
-                                                Experience</h6>
-                                        </div>
-                                    </div>
-                                    <div class="resume-list-item" data-index="1" id="resume-list-item-1">
-                                        <div class="resume-list-item-inner">
-                                            <h6 class="resume-list-item-title uppercase"><i
-                                                    class="fa fa-graduation-cap"></i> Education</h6>
-                                        </div>
-                                    </div>
-                                    <div class="resume-list-item" data-index="2" id="resume-list-item-2">
-                                        <div class="resume-list-item-inner">
-                                            <h6 class="resume-list-item-title uppercase"><i class="fa fa-star"></i>
-                                                Skills</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col s12 m12 l8 resume-cards-container section-padding">
-                                    <div class="resume-cards">
-                                        <div class="resume-card resume-card-0 front" data-index="0">
-                                            <div class="resume-card-header">
-                                                <div class="resume-card-name"><i class="fa fa-briefcase"></i> Experience
-                                                </div>
-                                            </div>
-                                            <div class="resume-card-body experience">
-                                                <div class="resume-card-body-container second-font">
-                                                   <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Flutter Developer - </span>Mintano</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i>Aug 2022 -
-                                                            Now</span>
-                                                        <p>We create photo, video & AR experiences that let your customers & fans interact with your brand or event in a unique way.</p>
-                                                    </div>
-                                                    <span class="separator"></span>
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Flutter Developer - </span>Bavest Technologies</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i>Feb 2022 -
-                                                            Aug 2022</span>
-                                                        <p>Working with a great team on one of the biggest financial platform using Flutter technology, a platform that supports visual and real trading for stocks following real time news and stock prices.</p>
-                                                    </div>
-                                                    <span class="separator"></span>
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Flutter Developer - UI/UX Designer -
-                                                            </span>Teqneia</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i>Aug 2020 -
-                                                            Jun 2021</span>
-                                                        <p>Teqneia is a software house, we've worked on different kinds of projects, my main job is responsibilities on all mobile application systems as a senior and supervisor from the mobile developers part, all of the departments were great developers, open-mind and friendly too.</p>
-                                                    </div>
-                                                    <span class="separator"></span>
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Flutter Developer - UI/UX Designer -
-                                                            </span>Egypt Railway Station</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i>Jan 2020 -
-                                                            Aug 2020</span>
-                                                        <p>A great project under the supervision of the Egyptian army called ERNST, our main job was to rebuild the old system with new technologies, my responsibilities were in the mobile system and UI/UX Designing as I chose to work with flutter framework for many reasons it was happy to work with open-mind and creative teamwork too.</p>
-                                                    </div>
-                                                    <span class="separator"></span>
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Freelancer </span></h6>
-                                                        <span class="date"><i class="far fa-calendar"></i> 2017 -
-                                                            2020</span>
-                                                        <p>The best way to manage to study and working is to take advantage of time and start working as a freelancer, I love time management as I give for learning I give for working and gaining experience too.</p>
-                                                    </div>
-                                                    
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="resume-card resume-card-1 back" data-index="1">
-                                            <div class="resume-card-header">
-                                                <div class="resume-card-name"><i class="fas fa-graduation-cap"></i>
-                                                    Education</div>
-                                            </div>
-                                            <div class="resume-card-body education">
-                                                <div class="resume-card-body-container second-font">
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Master's Degree - </span>University of Passau</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i> 2020 -
-                                                            2022</span>
-                                                        <p>Boosting my knowledge and achieve a higher education in computer science is always one of my main choices, and I never found a better living country than Germany
-as the university offers great and attractive topics to learn too.</p>
-                                                    </div>
-                                                    <span class="separator"></span>
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Bachelor Degree - </span>Ahram
-                                                            Canadian University</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i> 2015 -
-                                                            2019</span>
-                                                        <p>Finally, I've started studying the computer science field after I left the faculty of engineering, I believe we live once so we must do what we love and what we can be creative on to help society with our knowledge.
-I've learned problem-solving, clean coding, various architectures, and more under supervision of great professors.</p>
-                                                    </div>
-                                                    <span class="separator"></span>
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>Web Design Diploma -
-                                                            </span>Exception Student Team</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i> 2016 </span>
-                                                        <p>Finished diploma in web design in a very friendly committee
-                                                            team at my college which i've learned (html, css,
-                                                            javascript, jquery, bootstrap, PHP)</p>
-                                                    </div>
-                                                    <span class="separator"></span>
-                                                    <div class="resume-content">
-                                                        <h6 class="uppercase"><span>American Diploma - </span>Ellias
-                                                            College</h6>
-                                                        <span class="date"><i class="far fa-calendar"></i> 2011 - 2014
-                                                        </span>
-                                                        <p>The English Language is mandatory as it's the mother language for this planet, and what is better than an American diploma to finish my high school in English.</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="resume-card resume-card-2" data-index="2">
-                                            <div class="resume-card-header">
-                                                <div class="resume-card-name"><i class="fa fa-star"></i> Skills</div>
-                                            </div>
-                                            <div class="resume-card-body skills">
-                                                <div class="resume-card-body-container second-font">
-                                                    <div class="row">
-                                                        <div class="col s6">
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">adobe photoshop</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">html</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">adobe muse</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="fas fa-star-half-alt"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">3dunity</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fas fa-star-half-alt"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">flutter</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">python</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fas fa-star-half-alt"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">c++</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col s6">
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">Adobe dreamweaver</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="fas fa-star-half-alt"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">css</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">javascript
-                                                                    <h6>
-                                                                        <p><i class="fa fa-star"></i> <i
-                                                                                class="fa fa-star"></i> <i
-                                                                                class="fa fa-star"></i> <i
-                                                                                class="fa fa-star"></i> <i
-                                                                                class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">jquery</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fas fa-star-half-alt"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">dart</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fas fa-star-half-alt"></i><i
-                                                                                class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">c#</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fas fa-star-half-alt"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                            <div class="resume-content">
-                                                                <h6 class="uppercase">java</h6>
-                                                                <p><i class="fa fa-star"></i> <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i> <i
-                                                                        class="fa fa-star"></i> <i
-                                                                        class="far fa-star"></i></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container badges ">
-                        <div class="row">
-                            <div class="col s12 m4 l4 center-align">
-                                <h3>
-                                    <i class="fas fa-code"></i>
-                                    <span class="font-weight-900">100k+</span>
-                                </h3>
-                                <h6 class="uppercase font-weight-700">Lines of code</h6>
-                            </div>
-                            <div class="col s12 m4 l4 center-align">
-                                <h3>
-                                    <i class="far fa-handshake"></i>
-                                    <span class="font-weight-900">59+</span>
-                                </h3>
-                                <h6 class="uppercase font-weight-700">Done Projects</h6>
-                            </div>
-                            <div class="col s12 m4 l4 center-align">
-                                <h3>
-                                    <i class="far fa-heart"></i>
-                                    <span class="font-weight-900">48+</span>
-                                </h3>
-                                <h6 class="uppercase font-weight-700">Happy clients</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img alt="close" src="./assets/close-button.png " class="bl-icon-close">
-            </section>
-            <section id="bl-work-section" class="">
-                <div class="bl-box valign-wrapper">
-                    <div class="page-title center-align">
-                        <h2 class="center-align">
-                            <span data-hover="my">my </span>
-                            <span data-hover="portfolio">portfolio</span>
-                        </h2>
-                    </div>
-                </div>
-                <div class="bl-content">
-                    <div class="container page-title center-align">
-                        <h2 class="center-align">
-                            <span data-hover="my">my </span>
-                            <span data-hover="portfolio">portfolio</span>
-                        </h2>
-                    </div>
-                    <div class="container">
-                        <div class="divider center-align">
-                            <span class="outer-line"></span>
-                            <span class="fa fa-suitcase" aria-hidden="true"></span>
-                            <span class="outer-line"></span>
-                        </div>
-                        <div class="row center-align da-thumbs" id="bl-work-items">
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-1">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-1.jpg" alt="Project">
-                                    <div class="valign-wrapper"
-                                        style="display: flex; left: 100%; top: 0px; transition: all 300ms ease 0s;">
-                                        <span class="font-weight-700 uppercase">UI/UX Project</span></div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-2">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-2.jpg" alt="Project">
-                                    <div class="valign-wrapper"
-                                        style="display: flex; left: 100%; top: 0px; transition: all 300ms ease 0s;">
-                                        <span class="font-weight-700 uppercase">Logo Project</span></div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-3">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-3.jpg" alt="Project">
-                                    <div class="valign-wrapper"
-                                        style="display: flex; left: 0px; top: 100%; transition: all 300ms ease 0s;">
-                                        <span class="font-weight-700 uppercase">UI/UX Project</span></div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-4">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-4.jpg" alt="Project">
-                                    <div class="valign-wrapper"
-                                        style="display: flex; left: 100%; top: 0px; transition: all 300ms ease 0s;">
-                                        <span class="font-weight-700 uppercase">Social Branding</span></div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-5">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-5.jpg" alt="Project">
-                                    <div class="valign-wrapper"><span class="font-weight-700 uppercase">UI/UX
-                                            Project</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-6">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-6.jpg" alt="Project">
-                                    <div class="valign-wrapper"
-                                        style="display: flex; left: 0px; top: 100%; transition: all 300ms ease 0s;">
-                                        <span class="font-weight-700 uppercase">website project</span></div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-7">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-7.jpg" alt="Project">
-                                    <div class="valign-wrapper"><span class="font-weight-700 uppercase">UI/UX
-                                            project</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-8">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-8.jpg" alt="Project">
-                                    <div class="valign-wrapper"><span class="font-weight-700 uppercase">website
-                                            project</span>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col s12 m6 l6 xl4" data-panel="panel-9">
-                                <a href="">
-                                    <img class="responsive-img" src="./assets/project-9.jpg" alt="Project">
-                                    <div class="valign-wrapper"
-                                        style="display: flex; left: 100%; top: 0px; transition: all 300ms ease 0s;">
-                                        <span class="font-weight-700 uppercase">logo project</span></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img alt="close" src="./assets/close-button.png" class="bl-icon-close">
-            </section>
-            <section class="">
-                <div class="bl-box valign-wrapper">
-                    <div class="page-title center-align">
-                        <h2 class="center-align">
-                            <span data-hover="get">get </span>
-                            <span data-hover="in touch">in touch</span>
-                        </h2>
-                    </div>
-                </div>
-                <div class="bl-content">
-                    <div class="container page-title center-align">
-                        <h2 class="center-align">
-                            <span data-hover="get">get </span>
-                            <span data-hover="in touch">in touch</span>
-                        </h2>
-                    </div>
-                    <div class="container">
-                        <div class="divider center-align">
-                            <span class="outer-line"></span>
-                            <span class="fa fa-envelope-open" aria-hidden="true"></span>
-                            <span class="outer-line"></span>
-                        </div>
-                        <div class="row contact section-padding">
-                            <div class="col s12 m5 l5 xl4 leftside">
-                                <h6 class="font-weight-700 uppercase">Phone</h6>
-                                <span class="font-weight-400 second-font yesselect"><i class="fas fa-phone-alt"></i> +49 1590 6455 376</span>
-                                <h6 class="font-weight-700 uppercase">Email</h6>
-                                <span class="font-weight-400 second-font yesselect"><i
-                                        class="fas fa-envelope"></i>mosala7.me@gmail.com</span>
-                                <h6 class="font-weight-700 uppercase">imo</h6>
-                                <span class="font-weight-400 second-font"><i class="far fa-comment"></i>
-                                    mosala7</span>
-                                <h6 class="font-weight-700 uppercase">Address</h6>
-                                <span class="font-weight-400 second-font"><i class="fas fa-home"></i> Munich,
-                                    Germany</span><br>
-                                <h6 class="font-weight-700 uppercase">Social Profiles</h6>
-                                <div class="social">
-                                    <ul class="list-inline social social-intro center-align p-none">
-                                        <li class="facebook"><a target="_blank"
-                                                href="https://www.facebook.com/msala77"><i
-                                                    class="fab fa-facebook-f"></i></a></li>
-                                        <li class="github"><a target="_blank"
-                                                href="https://github.com/MoSala7"><i
-                                                    class="fab fa-github"></i></a></li>
-                                        <li class="behance"><a target="_blank" href="https://www.behance.net/msala77"><i
-                                                    class="fab fa-behance"></i></a></li>
-                                        <li class="linkedin"><a target="_blank"
-                                                href="https://www.linkedin.com/in/msala77/"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col s12 m7 l7 xl8 rightside">
-                                <h6 class="uppercase m-none font-weight-700">Feel free to drop me a line</h6>
-                                <div class="row">
-                                    <p class="col s12 m12 l12 xl10 second-font">
-                                        If you have any suggestion, project or even you want to say Hello.. Please fill
-                                        out the form below and I will reply you shortly.
-                                    </p>
-                                </div>
-                                <form class="contactform" method="POST" action="contactform.php">
-                                    <div class="input-field second-font">
-                                        <i class="fas fa-user prefix"></i>
-                                        <input id="name" name="name" type="text" class="validate invalid" required="">
-                                        <label class="font-weight-400" for="name">Your Name</label>
-                                    </div>
-                                    <div class="input-field second-font">
-                                        <i class="fa fa-envelope prefix"></i>
-                                        <input id="email" type="email" name="email" class="validate invalid"
-                                            required="">
-                                        <label for="email" class="">Your Email</label>
-                                    </div>
-                                    <div class="input-field second-font">
-                                        <i class="fa fa-comments prefix"></i>
-                                        <textarea id="comment" name="comment" class="materialize-textarea"
-                                            required=""></textarea>
-                                        <label for="comment" class="">Your Comment</label>
-                                    </div>
-                                    <div class="col s12 m12 l9 xl8 submit-form">
-                                        <button class="btn font-weight-700" type="submit" name="send">
-                                            Send Message <i class="fas fa-paper-plane"></i>
-                                        </button>
-                                    </div>
-                                    <div class="col s12 m12 l8 xl8 form-message">
-                                        <span class="output_message center-align font-weight-700 uppercase"></span>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <img alt="close" src="./assets/close-button.png" class="bl-icon-close">
-            </section>
-            <div class="bl-panel-items" id="bl-panel-work-items">
-                <div data-panel="panel-1" class="">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img class="responsive-img" src="./assets/project-1.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">UI/UX Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">Freelancer</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">06/22/2018</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">07/12/2018</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Adobe Photoshop, sketch</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/72238297/Medicine-App-UIUX"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-2" class="">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img class="responsive-img" src="./assets/project-2.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">Logo Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">Facebook Page</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">05/22/2019</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">05/22/2019</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Adobe Photoshop</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/81904493/Aio-Brain-Logo"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-3" class="">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img class="responsive-img" src="./assets/project-3.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">Flutter Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">Self Project</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">2/07/2019</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">12/07/2019</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Adobe Photoshop, Flutter</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank"
-                                href="https://www.behance.net/gallery/82818071/Note-Todo-App?"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-4" class="">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img class="responsive-img" src="./assets/project-4.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">Social Branding</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">Artnaa</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">01/09/2019</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">01/19/2019</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Adobe Photoshop</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/72237581/Posters-for-facebook-page"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-5">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="./assets/project-5.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">UI/UX Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">Saudian Shop</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">12/27/2019</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">01/28/2019</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Adobe Photoshop, sketch</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/78430275/Gamezy-App-UIUX"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-6">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="./assets/project-6.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">Website Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">_</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">07/29/2017</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">09/23/2017</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Html, css, javascript, jquery,
-                                        bootstrap</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/72228213/My-Personal-Website"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-7">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="./assets/project-7.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">UI/UX Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">freelancer</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">04/13/2018</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">05/05/2018</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Adobe Photoshop</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/72238539/Khaliq-Chat-App-UIUX"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-8">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="./assets/project-8.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">website Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">_</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">07/29/2017</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">08/24/2017</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Html, css, javascript, jquery,
-                                        bootstrap/span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/72228459/John-Doe-Website"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div data-panel="panel-9" class="">
-                    <div class="row">
-                        <div class="col s12 l6 xl6 section-padding section-padding-right-none">
-                            <img src="./assets/project-9.jpg" alt="project">
-                        </div>
-                        <div class="col s12 l6 xl6 section-padding">
-                            <h3 class="font-weight-700 uppercase">Logo Project</h3>
-                            <ul class="project-details second-font">
-                                <li><i class="fas fa-user"></i><span class="font-weight-700"> Client </span>: <span
-                                        class="font-weight-400 uppercase">Audiojungle</span></li>
-                                <li><i class="far fa-calendar"></i><span class="font-weight-700"> Start Date </span>:
-                                    <span class="font-weight-400 uppercase">04/25/2019</span></li>
-                                <li><i class="far fa-calendar-check"></i><span class="font-weight-700"> End Date
-                                    </span>: <span class="font-weight-400 uppercase">04/30/2019</span></li>
-                                <li><i class="fas fa-cogs"></i> <span class="font-weight-700"> Used Technologies</span>
-                                    :
-                                    <span class="font-weight-400 uppercase">Adobe photoshop</span></li>
-                            </ul>
-                            <hr>
-                            <a target="_blank" href="https://www.behance.net/gallery/79188891/Green-Future-logo-design"
-                                class="waves-effect waves-light btn font-weight-700">Preview <i
-                                    class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <nav>
-                    <span class="control-button bl-previous-work"><i class="fas fa-angle-left"></i></span>
-                    <img alt="close" src="./assets/close-button.png" class="control-button bl-icon-close">
-                    <span class="control-button bl-next-work"><i class="fas fa-angle-right"></i></span>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <script src="https://kit.fontawesome.com/1b0fbebeb2.js"></script>
-    <script src="./assets/jquery-2.2.4.min.js"></script>
-    <script src="./assets/jquery.animatedheadline.js"></script>
-    <script src="./assets/boxlayout.js"></script>
-    <script src="./assets/materialize.min.js"></script>
-    <script src="./assets/jquery.hoverdir.js"></script>
-    <script src="./assets/custom.js"></script>
-
+<script>
+  window.onload = function () {
+    setTimeout(function () {
+      var loadingIndicator = document.getElementById("loading_indicator");
+      if (loadingIndicator) {
+        loadingIndicator.remove();
+      }
+    }, 1000);
+  };
+</script>
 </body>
-
 </html>
