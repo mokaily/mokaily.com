@@ -57,7 +57,7 @@ const RESOURCES = {"assets/AssetManifest.bin": "7121cd55013d498773dbd45f9f54cbb1
 "assets/images/tools/python.svg": "7be3e62aa19ce7d9cf28ecc838efb6a3",
 "assets/images/tools/sql.svg": "903338c9eb87087f3426c116a2153b3d",
 "assets/images/tools/xd.svg": "ef311297fb7e75cf09be950930784855",
-"assets/NOTICES": "2e49f146d1edfa9b2728f40173348051",
+"assets/NOTICES": "fee71ccf3f481751b490447560c5b11a",
 "assets/Okaily's%20CV.pdf": "3a6e8a13bc9a4be31161178ff3eefcd7",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "89ed8f4e49bcdfc0b5bfc9b24591e347",
 "assets/shaders/ink_sparkle.frag": "f8b80e740d33eb157090be4e995febdf",
@@ -74,9 +74,9 @@ const RESOURCES = {"assets/AssetManifest.bin": "7121cd55013d498773dbd45f9f54cbb1
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
-"index.html": "3eb45ef8e9afaf555e25fc1248726168",
-"/": "3eb45ef8e9afaf555e25fc1248726168",
-"main.dart.js": "8e73e19c79afbe78e4f0e4c0caff1cbc",
+"index.html": "969d74ebe8e96747b34481fb3f29298f",
+"/": "969d74ebe8e96747b34481fb3f29298f",
+"main.dart.js": "ce44199da320d37500417a9dc4624bbc",
 "manifest.json": "66ba3ed7668aac42d034079af2941119",
 "version.json": "93f79c4845bca743997d155b19290ff9"};
 // The application shell files that are downloaded before a service worker can
