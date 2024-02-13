@@ -54,7 +54,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="my portfolio">
+  <meta name="description" content="Hello, I bring over 5 years of expertise as a Flutter developer, coupled with proficiency in UI/UX design. Additionally, I delve into junior data science.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -70,7 +70,7 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1618476412";
+    const serviceWorkerVersion = "2328053637";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
@@ -82,31 +82,22 @@
     _flutter.loader.loadEntrypoint({
       serviceWorker: {
         serviceWorkerVersion: serviceWorkerVersion,
-      },
-      onEntrypointLoaded: function(engineInitializer) {
-        engineInitializer.initializeEngine().then(function(appRunner) {
-          appRunner.runApp();
-        });
       }
+    }).then(function(engineInitializer) {
+      return engineInitializer.initializeEngine();
+    }).then(function(appRunner) {
+      return appRunner.runApp();
     });
   });
 </script>
+
 <div id="loading_indicator" class="container">
   <div class="indicator" viewBox="0 0 100 100">
     <div class="circle"></div>
   </div>
 </div>
 
+<script src="main.dart.js" type="application/javascript"></script>
 
-<script>
-  window.onload = function () {
-    setTimeout(function () {
-      var loadingIndicator = document.getElementById("loading_indicator");
-      if (loadingIndicator) {
-        loadingIndicator.remove();
-      }
-    }, 1000);
-  };
-</script>
 </body>
 </html>
